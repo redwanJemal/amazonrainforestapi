@@ -1,0 +1,26 @@
+{
+  "name": "caponica/amazon-rainforest",
+  "type": "library",
+  "license": "MIT",
+  "description": "Simplified access the Amazon Rainforest API",
+  "keywords": ["amazon", "rainforest api", "amazon api"],
+  "authors": [
+    {
+      "name": "Redwan Jemal Mohammed",
+      "homepage": "https://github.com/redwanJemal"
+    }
+  ],
+
+  "require": {
+    "php": ">=5.4.0",
+    "psr/log": "^1.0.1",
+    "ext-json": "*",
+    "guzzlehttp/guzzle" : "^6.2"
+  },
+
+  "autoload": {
+    "psr-0": {
+      "CaponicaAmazonRainforest\\": "src/"
+    }
+  }
+}
