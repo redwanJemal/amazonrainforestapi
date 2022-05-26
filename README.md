@@ -8,7 +8,7 @@ Installation
 
 Install using composer: 
 
-    composer require caponica/amazon-rainforest-api
+    composer require redone/amazon-rainforest-api
 
 
 Accessing the API

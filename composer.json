@@ -1,5 +1,5 @@
 {
-  "name": "caponica/amazon-rainforest",
+  "name": "redone/amazon-rainforest",
   "type": "library",
   "license": "MIT",
   "description": "Simplified access the Amazon Rainforest API",
