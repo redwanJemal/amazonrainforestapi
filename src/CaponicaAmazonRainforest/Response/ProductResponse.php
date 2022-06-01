@@ -145,7 +145,7 @@ class ProductResponse extends CommonResponse
         }
 
         $weightString = strtolower($weightString);
-        $weightNumber = 1 * trim(substr($weightString, 0, strpos($weightString, ' ')));
+        $weightNumber = 1 * float(trim(substr($weightString, 0, strpos($weightString, ' '))));
         if (strpos($weightString, ' ounces')) {
             return $weightNumber * self::WEIGHT_CONVERT_OZ_TO_LB;
         } elseif (strpos($weightString, ' pounds')) {
