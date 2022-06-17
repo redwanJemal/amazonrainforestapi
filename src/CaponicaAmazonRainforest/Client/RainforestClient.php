@@ -5,6 +5,7 @@ namespace CaponicaAmazonRainforest\Client;
 use CaponicaAmazonRainforest\Entity\RainforestBestSellers;
 use CaponicaAmazonRainforest\Entity\RainforestEntityCommon;
 use CaponicaAmazonRainforest\Entity\RainforestProduct;
+use CaponicaAmazonRainforest\Entity\RainforestSalesEstimation;
 use CaponicaAmazonRainforest\Entity\RainforestStockEstimation;
 use CaponicaAmazonRainforest\Request\BestSellersRequest;
 use CaponicaAmazonRainforest\Request\CategoryRequest;
@@ -12,6 +13,7 @@ use CaponicaAmazonRainforest\Request\CommonRequest;
 use CaponicaAmazonRainforest\Request\OfferRequest;
 use CaponicaAmazonRainforest\Request\ProductRequest;
 use CaponicaAmazonRainforest\Request\ReviewRequest;
+use CaponicaAmazonRainforest\Request\SalesEstimationRequest;
 use CaponicaAmazonRainforest\Request\SearchRequest;
 use CaponicaAmazonRainforest\Request\StockEstimationRequest;
 use CaponicaAmazonRainforest\Response\CommonResponse;
@@ -50,6 +52,7 @@ class RainforestClient
     const REQUEST_TYPE_REVIEWS          = 'reviews';
     const REQUEST_TYPE_SEARCH           = 'search';
     const REQUEST_TYPE_STOCK_ESTIMATION = 'stock_estimation';
+    const REQUEST_TYPE_SALES_ESTIMATION = 'sales_estimation';
 
     /** @var LoggerInterface $logger */
     protected $logger;
@@ -240,6 +243,19 @@ class RainforestClient
     public function retrieveStockEstimations($requests, $rfObjects=null) {
         /** @var RainforestStockEstimation[] $objects */
         $objects = $this->retrieveObjects(StockEstimationRequest::getReflectionArray(), $requests, $rfObjects);
+        return $objects;
+    }
+    /**
+     * @param SalesEstimationRequest|SalesEstimationRequest[] $requests         The StockEstimationRequest(s) to process and retrieve.
+     * @param RainforestSalesEstimation|RainforestSalesEstimation[] $rfObjects  RainforestStockEstimation object (or Array indexed by getKey()).
+     *                                                                          If set then they will be updated from the response,
+     *                                                                          instead of creating new ones.
+     * @return RainforestSalesEstimation[]
+     * @throws \Exception
+     */
+    public function retrieveSalesEstimations($requests, $rfObjects=null) {
+        /** @var RainforestSalesEstimation[] $objects */
+        $objects = $this->retrieveObjects(SalesEstimationRequest::getReflectionArray(), $requests, $rfObjects);
         return $objects;
     }
     /**
